@@ -4,48 +4,150 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    screens: {
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    },
+    colors: {
+      transparent: 'transparent',
+      black: '#000',
+      white: '#fff',
+
+      primary: {
+        100: '#ece4fe',
+        200: '#c7aefb',
+        300: '#a278f9',
+        400: '#7d42f6',
+        500: '#8C58F7',
+        600: '#570cf3',
+        700: '#4409bd',
+        800: '#310687',
+        900: '#1d0451',
+      },
+
+      secondary: {
+        100: '#93a1ac',
+        200: '#81919e',
+        300: '#6f8190',
+        400: '#5d7282',
+        500: '#4b6274',
+        600: '#445868',
+        700: '#3c4e5d',
+        800: '#354551',
+        900: '#2d3b46',
+      },
+
+      gray: {
+        "lightest": "#fff",
+        100: '#f7fafc',
+        200: '#edf2f7',
+        300: '#e2e8f0',
+        400: '#cbd5e0',
+        500: '#a0aec0',
+        600: '#718096',
+        700: '#4a5568',
+        800: '#2d3748',
+        900: '#1a202c',
+      },
+    },
+
+    spacing: {
+      px: '1px',
+      '0': '0',
+      '1': '0.25rem',
+      '2': '0.5rem',
+      '3': '0.75rem',
+      '4': '1rem',
+      '5': '1.25rem',
+      '6': '1.5rem',
+      '8': '2rem',
+      '10': '2.5rem',
+      '12': '3rem',
+      '16': '4rem',
+      '20': '5rem',
+      '24': '6rem',
+      '32': '8rem',
+      '40': '10rem',
+      '48': '12rem',
+      '56': '14rem',
+      '64': '16rem',
+      '72': '18rem',
+      '80': '20rem',
+      '96': '24rem',
+      '128': '32rem',
+      '144': '36rem',
+    },
+
+    borderRadius: {
+      none: '0',
+      sm: '0.125rem',
+      DEFAULT: '0.25rem',
+      md: '0.375rem',
+      lg: '0.5rem',
+      xl: '0.75rem',
+      "2xl": '1rem',
+      "3xl": '1.5rem',
+      "4xl": '2.5rem',
+      "5xl":'3rem',
+      "6xl":'4.5rem',
+      full: '9999px',
+    },
+
+    borderWidth: {
+      DEFAULT: '1px',
+      '0': '0',
+      '2': '2px',
+      '4': '4px',
+      '8': '8px',
+    },
+    boxShadow: {
+      xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
+      sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+      DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+      md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+      lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+      xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+      '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+      inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+      outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
+      raised: '0 20px 50px rgba(0,0,0, 0.075)',
+      none: 'none',
+    },
+
+    fontFamily: {
+      display: ['Inter', 'system-ui'],
+      sans: [
+        'system-ui',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        '"Noto Sans"',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+        '"Noto Color Emoji"',
+      ],
+      serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+      mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
+    },
+
     extend: {
-      screens: {
-        'sm': '640px',
-        // => @media (min-width: 640px) { ... }
-  
-        'md': '768px',
-        // => @media (min-width: 768px) { ... }
-  
-        'lg': '1024px',
-        // => @media (min-width: 1024px) { ... }
-  
-        'xl': '1280px',
-        // => @media (min-width: 1280px) { ... }
-  
-        '2xl': '1536px',
-        // => @media (min-width: 1536px) { ... }
-      },
-      colors: {
-        primary: {
-          100: '#ece4fe',
-          200: '#c7aefb',
-          300: '#a278f9',
-          400: '#7d42f6',
-          500: '#8C58F7',
-          600: '#570cf3',
-          700: '#4409bd',
-          800: '#310687',
-          900: '#1d0451',
-        },
-  
-        secondary: {
-          100: '#93a1ac',
-          200: '#81919e',
-          300: '#6f8190',
-          400: '#5d7282',
-          500: '#4b6274',
-          600: '#445868',
-          700: '#3c4e5d',
-          800: '#354551',
-          900: '#2d3b46',
-        },  
-      },
       fontSize: {
         xs: '0.75rem',
         sm: '0.875rem',
