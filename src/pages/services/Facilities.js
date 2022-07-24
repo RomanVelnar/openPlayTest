@@ -12,7 +12,9 @@ const Heading = tw.h2``
 const Facilities = () => {
     return(
         <Container>
-                {locations.data.map(location => {
+                {locations.data
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map(location => {
                     return(
                     <FacilitiesCard key={location.id}>
                         <Heading>{location.name}</Heading>
