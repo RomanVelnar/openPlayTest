@@ -1,9 +1,10 @@
 
 import tw from "twin.macro";
-import locations from "../../data/facilities.json";
+import facilities from "../../data/facilities.json";
 import activity from "../../data/activities.json";
 import Services from "./Services";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 
 const Container = tw.div`grid grid-cols-3`
@@ -11,6 +12,9 @@ const FacilitiesCard = tw.div`w-1/3 p-4 rounded cursor-pointer bg-primary-500 ho
 const Heading = tw.h2``
 
 const Facilities = () => {
+
+    let locations = structuredClone(facilities);
+    
     return(
         <Container>
                 {locations.data
