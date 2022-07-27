@@ -8,7 +8,8 @@ const Heading = tw.h2``
 
 const Facilities = ({ facilitiesResult }) => {
 
-    let locations = structuredClone(facilities);
+    let locations = structuredClone(facilities.data);
+    console.log(locations)
     
     return(
         <Container>
