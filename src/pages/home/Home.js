@@ -7,19 +7,9 @@ import facilities from "../../data/facilities.json";
 const Container = tw.section`flex flex-col`
 
 const Home = () => {
-
-
-
-    // if (error) return "An error has occurred.";
-    // if (!data) return "Loading...";
-
     
     let locations = structuredClone(facilities.data);
 
-
-    // const formattedData = Object.entries(facilitiesData.data).map((entry) => ({ name: entry[0], id: entry[1] }));
-    // console.log(formattedData)
-    
     return(
         <Container>
             <Services apiData={locations} />
