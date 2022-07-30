@@ -21,6 +21,8 @@ const Activity = () => {
 
     const { facility_id } = useParams();
 
+    console.log(activitiesData)
+
     // create a function that compares two data sets
     // match the facilities "id" with activities "facility_id" 
     // connect the "id's" to the Link in Facilities.js
@@ -43,6 +45,8 @@ const Activity = () => {
         <Container>
             {activitiesData
                 .sort((a, b) => a.start_time - b.start_time)
+                // .sort((a, b) => parseFloat(a.start_time) - parseFloat(b.start_time))
+
                 .map((activity, value) => (
                     <ActivitiesContainer key={value}>
                         <Time>{activity.start_time}</Time>
