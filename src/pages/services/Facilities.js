@@ -1,45 +1,34 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import tw from "twin.macro";
-import facilities from "../../data/facilities.json";
-import activities from "../../data/activities.json"
+import FuzzySearchBar from "../../components/fuzzySearchBar/FuzzySearch";
+import Facility from "./Facility";
+import Fuse from "fuse.js";
 
-const Container = tw.div`grid grid-cols-3`
-const FacilitiesCard = tw.div`w-1/3 p-4 rounded cursor-pointer bg-primary-500 hover:bg-primary-300`
-const Heading = tw.h2`text-center`
+const Container = tw.div`px-10 pt-10`;
+const Heading = tw.h1`text-3xl font-bold text-primary-600 text-center`;
 
-const Facilities = ({ facilitiesResult }) => {
+const Facilities = ({ facilitiesData }) => {
 
-    let locations = structuredClone(facilities.data);
-    let activitiesData = structuredClone(activities.data)
-    console.log(locations)
-    
+    const [query, setQuery] = useState('')
+
+    const options = {
+        keys: [
+            "name",
+        ],
+        includeScore: true
+    };
+
+    const fuse = new Fuse(facilitiesData, options);
+
+    const results = fuse.search(query);
+
+    const facilitiesResult = query ? results.map(results => results.item) : facilitiesData;
+
     return(
         <Container>
-                {/* {locations.data
-                .sort((a, b) => a.name.localeCompare(b.name))
-                .map((location) => (
-                    // <Link to="/Services">
-                        <FacilitiesCard key={location.id}>
-                            <Heading>{location.name}</Heading>
-                        </FacilitiesCard>  
-                    // </Link>   
-                    )
-                )} */}
-
-
-                {facilitiesResult
-                    .slice(0, 6)
-                    .sort((a, b) => a.name.localeCompare(b.name))
-                    .map((facility, value) => (
-                        <FacilitiesCard key={value}>
-                            <Heading>{facility.name.replaceAll('_', ' ')}</Heading>
-                            <Link to={`/activities/${locations.id}`}>View</Link>
-                        </FacilitiesCard>
-                ))}
-
-
-
+            <Heading>Facilities</Heading>
+            <FuzzySearchBar query={query} setQuery={setQuery} />
+            <Facility facilitiesResult={facilitiesResult} />
         </Container>
     )
 }
