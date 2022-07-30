@@ -7,10 +7,7 @@ import Fuse from "fuse.js";
 const Container = tw.div`px-10 pt-10`;
 const Heading = tw.h1`text-3xl font-bold text-primary-600 text-center`;
 
-
-
-
-const Services = ({ apiData }) => {
+const Services = ({ facilitiesData }) => {
 
     const [query, setQuery] = useState('')
 
@@ -21,11 +18,11 @@ const Services = ({ apiData }) => {
         includeScore: true
     };
 
-    const fuse = new Fuse(apiData, options);
+    const fuse = new Fuse(facilitiesData, options);
 
     const results = fuse.search(query);
 
-    const facilitiesResult = query ? results.map(results => results.item) : apiData;
+    const facilitiesResult = query ? results.map(results => results.item) : facilitiesData;
 
     return(
         <Container>
