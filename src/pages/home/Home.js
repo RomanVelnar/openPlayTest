@@ -1,7 +1,6 @@
 import React from "react";
 import tw from "twin.macro";
 import facilities from "../../data/facilities.json";
-import Activity from "../activities/Activity";
 import Facilities from "../services/Facilities";
 
 

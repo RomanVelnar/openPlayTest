@@ -13,8 +13,8 @@ const Facility = ({ facilitiesResult }) => {
                 .map((facility, value) => (
                     <FacilitiesCard 
                         key={value}
-                        locationCardHeader={facility.name.replaceAll('_', ' ')}
-                        locationCardText={"View"}
+                        locationCardHeader={facility.name.replaceAll('_')}
+                        locationCardText={""}
                     />
 
             ))}

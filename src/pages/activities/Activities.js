@@ -6,7 +6,7 @@ import Activity from "./Activity";
 import Fuse from "fuse.js";
 
 const Container = tw.div`p-10 text-center`;
-const Header = tw.h2`text-primary-500`
+const Header = tw.h2`text-3xl font-bold text-primary-600 text-center`
 
 
 const Activites = () => {

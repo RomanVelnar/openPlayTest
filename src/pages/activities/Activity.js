@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import tw from "twin.macro";
 import activities from "../../data/activities.json";
-import { useParams } from "react-router-dom";
-import facilities from "../../data/facilities.json";
-import FacilitiesCard, { ActivitiesCard } from "../../components/Card/Card";
+import { ActivitiesCard } from "../../components/Card/Card";
 
 const Container = tw.div`grid grid-cols-3 gap-10`
 

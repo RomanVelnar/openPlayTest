@@ -4,7 +4,7 @@ import activities from "../../data/activities.json";
 
 
 const LocationCard = tw.div`p-4 text-center rounded cursor-pointer bg-primary-500 hover:bg-primary-300`
-const LocationCardHeader = tw.h2``
+const LocationCardHeader = tw.h2`font-semibold italic`
 const LocationCardText = tw.p``
 
 const ActivityCard = tw.div`text-center p-10 rounded cursor-pointer bg-primary-500 hover:bg-primary-300`;
