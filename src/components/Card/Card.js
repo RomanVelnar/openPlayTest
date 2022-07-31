@@ -7,7 +7,7 @@ const LocationCard = tw.div`p-4 text-center rounded cursor-pointer bg-primary-50
 const LocationCardHeader = tw.h2``
 const LocationCardText = tw.p``
 
-const ActivityCard = tw.div`text-center p-10 bg-primary-500`;
+const ActivityCard = tw.div`text-center p-10 rounded cursor-pointer bg-primary-500 hover:bg-primary-300`;
 const ActivityHeader = tw.h2``;
 const ActivityTime = tw.h2``;
 const ActivityLevel = tw.p``;
@@ -21,7 +21,7 @@ export const FacilitiesCard = (props) => {
     return(
         <LocationCard>
             <Link 
-                to={`/activity:${activitiesData.facility_id}`}
+                to={`/activities`}
                 key={activitiesData.facility_id}
             >{linkText}
             <LocationCardHeader>{locationCardHeader}</LocationCardHeader>

@@ -27,7 +27,11 @@ const Facilities = ({facilitiesData}) => {
     return(
         <Container>
             <Heading>Facilities</Heading>
-            <FuzzySearchBar query={query} setQuery={setQuery} />
+            <FuzzySearchBar 
+                query={query} 
+                setQuery={setQuery}
+                searchPlaceholder={"Search for locations"} 
+            />
             <Facility facilitiesResult={facilitiesResult} />
         </Container>
     )
