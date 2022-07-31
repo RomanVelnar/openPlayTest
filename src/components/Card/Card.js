@@ -1,14 +1,27 @@
 import tw from "twin.macro";
+import { Link } from "react-router-dom";
+import activities from "../../data/activities.json";
 
-const Card = tw.div`p-4 w-1/3 rounded cursor-pointer bg-primary-500 hover:bg-primary-300`
-const CardText = tw.p`text-center`
 
+const LocationCard = tw.div`p-4 text-center rounded cursor-pointer bg-primary-500 hover:bg-primary-300`
+const LocationCardHeader = tw.h2``
+const LocationCardText = tw.p``
 
 const FacilitiesCard = (props) => {
+
+    const {cardHeader, cardText, linkText} = props;
+    let activitiesData = structuredClone(activities.data)
+
     return(
-        <Card>
-            <CardText></CardText>
-        </Card>
+        <LocationCard>
+            <Link 
+                to={`/activity:${activitiesData.facility_id}`}
+                key={activitiesData.facility_id}
+            >{linkText}
+            <LocationCardHeader>{cardHeader}</LocationCardHeader>
+            <LocationCardText>{cardText}</LocationCardText>
+            </Link>
+        </LocationCard>
     )
 }
 

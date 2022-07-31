@@ -3,6 +3,7 @@ import tw from "twin.macro";
 import activities from "../../data/activities.json";
 import { useParams } from "react-router-dom";
 import facilities from "../../data/facilities.json";
+import FacilitiesCard from "../../components/Card/Card";
 
 const Container = tw.div`grid grid-cols-3 gap-3`
 const ActivitiesContainer = tw.div`text-center p-10 bg-primary-500`
@@ -12,7 +13,7 @@ const Location = tw.p``
 const Level = tw.p``
 
 
-const Activity = () => {
+const Activity = ({props}) => {
 
     // const [data, setData] = useState([]);
 
@@ -22,12 +23,6 @@ const Activity = () => {
     const { facility_id } = useParams();
 
     console.log(activitiesData)
-
-    // create a function that compares two data sets
-    // match the facilities "id" with activities "facility_id" 
-    // connect the "id's" to the Link in Facilities.js
-    // some example might be find. forEach. filter. that can connect two data sets
-    // think of joining the datasets in parent component
 
     return(
         // <Container>
@@ -56,6 +51,11 @@ const Activity = () => {
                         <Location>{activity.location}</Location>
                     </ActivitiesContainer>
             ))}
+
+            <FacilitiesCard 
+                cardHeader={"safdsfadfafd"}
+                cardText={"dfasdfadsfaf"}
+            />
         </Container>
 
     )

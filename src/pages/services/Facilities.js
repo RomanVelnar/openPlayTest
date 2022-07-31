@@ -7,7 +7,7 @@ import Fuse from "fuse.js";
 const Container = tw.div`px-10 pt-10`;
 const Heading = tw.h1`text-3xl font-bold text-primary-600 text-center`;
 
-const Facilities = ({ facilitiesData }) => {
+const Facilities = ({facilitiesData}) => {
 
     const [query, setQuery] = useState('')
 
