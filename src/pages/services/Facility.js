@@ -1,6 +1,6 @@
 import React from "react";
 import tw from "twin.macro";
-import FacilitiesCard from "../../components/Card/Card";
+import { FacilitiesCard } from "../../components/Card/Card";
 
 const Container = tw.div`grid grid-cols-3 gap-5`
 
@@ -13,10 +13,10 @@ const Facility = ({ facilitiesResult }) => {
                 .map((facility, value) => (
                     <FacilitiesCard 
                         key={value}
-                        cardHeader={facility.name.replaceAll('_', ' ')}
-                        cardText={"View"}
-                        >
-                    </FacilitiesCard>
+                        locationCardHeader={facility.name.replaceAll('_', ' ')}
+                        locationCardText={"View"}
+                    />
+
             ))}
 
         </Container>

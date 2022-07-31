@@ -7,9 +7,15 @@ const LocationCard = tw.div`p-4 text-center rounded cursor-pointer bg-primary-50
 const LocationCardHeader = tw.h2``
 const LocationCardText = tw.p``
 
-const FacilitiesCard = (props) => {
+const ActivityCard = tw.div`text-center p-10 bg-primary-500`;
+const ActivityHeader = tw.h2``;
+const ActivityTime = tw.h2``;
+const ActivityLevel = tw.p``;
+const ActivityLocation = tw.p``;
 
-    const {cardHeader, cardText, linkText} = props;
+export const FacilitiesCard = (props) => {
+
+    const {locationCardHeader, locationCardText, linkText} = props;
     let activitiesData = structuredClone(activities.data)
 
     return(
@@ -18,11 +24,24 @@ const FacilitiesCard = (props) => {
                 to={`/activity:${activitiesData.facility_id}`}
                 key={activitiesData.facility_id}
             >{linkText}
-            <LocationCardHeader>{cardHeader}</LocationCardHeader>
-            <LocationCardText>{cardText}</LocationCardText>
+            <LocationCardHeader>{locationCardHeader}</LocationCardHeader>
+            <LocationCardText>{locationCardText}</LocationCardText>
             </Link>
         </LocationCard>
     )
 }
 
-export default FacilitiesCard;
+export const ActivitiesCard = (props) => {
+    
+    const {activityHeader, activityStartTime, activityEndTime, activityLevel, activityLocation} = props 
+
+    return(
+        <ActivityCard>
+            <ActivityHeader>{activityHeader}</ActivityHeader>
+            <ActivityTime>{activityStartTime}</ActivityTime>
+            <ActivityTime>{activityEndTime}</ActivityTime>
+            <ActivityLevel>{activityLevel}</ActivityLevel>
+            <ActivityLocation>{activityLocation}</ActivityLocation>
+        </ActivityCard>
+    )
+}
