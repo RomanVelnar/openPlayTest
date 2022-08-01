@@ -5,9 +5,9 @@ import Facility from "./Facility";
 import Fuse from "fuse.js";
 
 const Container = tw.div`px-10 pt-10`;
-const Heading = tw.h1`text-3xl font-bold text-primary-600 text-center`;
+const Heading = tw.h2`text-3xl font-bold text-primary-600 text-center`;
 
-const Facilities = ({ facilitiesData }) => {
+const Facilities = ({facilitiesData}) => {
 
     const [query, setQuery] = useState('')
 
@@ -27,7 +27,11 @@ const Facilities = ({ facilitiesData }) => {
     return(
         <Container>
             <Heading>Facilities</Heading>
-            <FuzzySearchBar query={query} setQuery={setQuery} />
+            <FuzzySearchBar 
+                query={query} 
+                setQuery={setQuery}
+                searchPlaceholder={"Search for locations"} 
+            />
             <Facility facilitiesResult={facilitiesResult} />
         </Container>
     )

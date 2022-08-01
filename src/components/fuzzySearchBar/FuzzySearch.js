@@ -5,7 +5,7 @@ const Container = tw.div`p-8`;
 const ContainerFlex = tw.div`flex items-center rounded-full shadow-xl`;
 const SearchInput = tw.input`rounded w-full py-4 px-6 text-gray-700 focus:outline-none`
 
-const FuzzySearchBar = ({setQuery, query}) => {
+const FuzzySearchBar = ({setQuery, query, searchPlaceholder}) => {
 
     function handleOnSearch({ currentTarget = {} }) {
         const { value } = currentTarget;
@@ -17,7 +17,7 @@ const FuzzySearchBar = ({setQuery, query}) => {
             <ContainerFlex>
                 <SearchInput 
                     type="search"
-                    placeholder="Search for facilities locations"
+                    placeholder={searchPlaceholder}
                     autoComplete="off"
                     id="search"
                     value={query}
