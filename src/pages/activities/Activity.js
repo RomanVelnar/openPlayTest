@@ -1,7 +1,7 @@
 import React from "react";
 import tw from "twin.macro";
 import activities from "../../data/activities.json";
-import { ActivitiesCard } from "../../components/Card/Card";
+import ActivitiesCard from "../../components/Card/ActivitiesCard";
 
 const Container = tw.div`grid grid-cols-3 gap-10`
 
@@ -14,18 +14,6 @@ const Activity = ({activitiesResult, props}) => {
     console.log(activitiesData)
 
     return(
-        // <Container>
-        //     {activitiesData.map((activity, value) => {
-        //         if(facilitiesData.id === activitiesData.facility_id){
-        //                 <ActivitiesContainer key={value}>
-        //                     <h1>{activity.name}</h1>
-        //                     <p>{activity.start_time}</p>
-        //                 </ActivitiesContainer>
-        //                 }
-        //     })}
-
-        // </Container>
-
         <Container>
             {activitiesResult
                 // .sort((a, b) => a.start_time - b.start_time)
@@ -40,9 +28,7 @@ const Activity = ({activitiesResult, props}) => {
                         activityLocation={activity.location}
                     />
             ))}
-
         </Container>
-
     )
 };
 

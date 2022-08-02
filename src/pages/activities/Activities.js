@@ -10,8 +10,7 @@ const Header = tw.h2`text-3xl font-bold text-primary-600 text-center`
 
 
 const Activites = () => {
-
-    const activitiesData = structuredClone(activities.data);
+    const [activitiesData] = useState(activities.data)
 
     const [query, setQuery] = useState('')
 

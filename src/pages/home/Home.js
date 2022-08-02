@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import tw from "twin.macro";
 import facilities from "../../data/facilities.json";
 import Facilities from "../services/Facilities";
@@ -6,16 +6,10 @@ import Facilities from "../services/Facilities";
 
 const Container = tw.section`flex flex-col`
 
-const Home = () => {
 
-    // const map = new Map();
-    // facilitiesData.forEach(item => map.set(item.id, item));
-    // activitiesData.forEach(item => map.set(item.facility_id, {...map.get(item.facility_id), ...item}));
-    // const mergedArr = Array.from(map.values());
+const Home = () => {    
 
-    // console.log(mergedArr);
-    
-    let facilitiesData = structuredClone(facilities.data);
+    const [facilitiesData] = useState(facilities.data);
 
     return(
         <Container>
