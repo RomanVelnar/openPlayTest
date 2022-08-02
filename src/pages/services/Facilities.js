@@ -9,6 +9,7 @@ const Heading = tw.h2`text-3xl font-bold text-primary-600 text-center`;
 
 const Facilities = ({facilitiesData}) => {
 
+<<<<<<< HEAD
     const [query, setQuery] = useState('')
 
     const options = {
@@ -33,6 +34,21 @@ const Facilities = ({facilitiesData}) => {
                 searchPlaceholder={"Search for locations"} 
             />
             <Facility facilitiesResult={facilitiesResult} />
+=======
+    let locations = structuredClone(facilities.data);
+    console.log(locations)
+    
+    return(
+        <Container>
+                {facilitiesResult
+                    .slice(0, 6)
+                    .sort((a, b) => a.name.localeCompare(b.name))
+                    .map((facility, value) => (
+                        <FacilitiesCard key={value}>
+                            <Heading>{facility.name.replaceAll('_', ' ')}</Heading>
+                        </FacilitiesCard>
+                ))}
+>>>>>>> 0609561 (code cleanup)
         </Container>
     )
 }
