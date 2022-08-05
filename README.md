@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Open Play Challenge 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## App description
 
-## Available Scripts
+This application is meant for the leisure clubs, it displays the sport/leisure activities and their locations. User can log in and search for activities in their vacinity. 
 
-In the project directory, you can run:
+## Technologies used
 
-### `npm start`
+For this project I used following technologies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ReactJS [React documentation](https://reactjs.org/)
+- TailwindCSS [TailwindCSS documentation](https://tailwindcss.com/docs/installation)
+- Styled-components [Styled-components documentations](https://styled-components.com/)
+- FuseJS [FuseJS documentation](https://fusejs.io/)
+- Twin.macro [Twin.macro documentation](https://github.com/ben-rogerson/twin.macro) 
+- Jest [Jest documentation](https://jestjs.io/docs/tutorial-react)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Reason for using the technologies is, React for performance, Tailwind with styled-components for the practical use, as the syntax is easy to read and there is no need for separate files where CSS is placed. Furhtermore, Tailwind is highly performant CSS library and shortens the CSS syntax and it makes it more readable. Twin.macro combines the two, Tailwind and styled-components, where JSX expressions can be declared at the start of the components and used in component functions. Jest was used for testing purposes.
 
-### `npm test`
+## App requirements and features
+App has two data sets, facilities.json and activities.json as mock API responses, they are connected through the id and facility_id. The first dataset, facilities.json displays the locations, while the activities.json displays the name of the activity, start and end time as well as level and location with the facility location. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**The app must include following features:**
 
-### `npm run build`
+- Facilities have to be listed ordered alphabetically by name, the facilities must be allowed to be filtered by tag(dynamic dropdown ordered alphabetically) and/or by facility name(fuzzy search)
+- Upon selecting the facility, we have to display todays timetable of activities ordered by start time, as well as allowing the activities to be filtered by tag(dynamic dropdown ordered alphabetically) and/or by activity name(fuzzy search)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Challenges faced and features for the future
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Challenges faced
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The main issue that we had was to connect and display the activities after selecting the location. Two approached were proposed, first would be to combine the two datasets, by using the reduce. However, we abandoned this approach due to scallability in a large scale application. 
+The second approach was to intruduce the useParams and filter the URL related just to the facilty_id. 
 
-### `npm run eject`
+### Features for the future
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The app doesnt have the dynamic dropdown implemented as of now, this could be a feature for the future. As well as, working on the design of the app.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How to install and run the project
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+First clone the repo from GitHub
+```
+git clone https://github.com/RomanVelnar/openPlayTest.git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
 
-## Learn More
+Run the npm install to sync with the npm package versions used in the project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+npm i 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
 
-### Code Splitting
+To run the project 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+npm start
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
